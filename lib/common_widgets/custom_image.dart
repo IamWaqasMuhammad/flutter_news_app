@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
-class UniversalImageWidget extends StatelessWidget {
+import '../app_barrels.dart';
+
+class CustomImage extends StatelessWidget {
   final String path; // local asset path or network URL
   final double? width;
   final double? height;
@@ -12,7 +12,7 @@ class UniversalImageWidget extends StatelessWidget {
   final Widget? errorWidget;
   final BaseCacheManager? cacheManager; // optional custom cache manager
 
-  const UniversalImageWidget({
+  const CustomImage({
     Key? key,
     required this.path,
     this.width,
@@ -36,7 +36,7 @@ class UniversalImageWidget extends StatelessWidget {
           width: width,
           height: height,
           fit: fit,
-          placeholderBuilder: (_) => placeholder ?? const CircularProgressIndicator(),
+          placeholderBuilder: (_) => placeholder ?? const LoadingSpinner(),
         );
       } else {
         return CachedNetworkImage(

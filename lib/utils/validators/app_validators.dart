@@ -3,7 +3,8 @@ class Validators {
   static String? validateEmail(String? value) {
     if (value == null || value.trim().isEmpty) return "Email is required";
     final emailRegex = RegExp(
-        r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
+      r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$",
+    );
     if (!emailRegex.hasMatch(value.trim())) return "Enter a valid email";
     return null;
   }
@@ -13,7 +14,8 @@ class Validators {
   static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) return "Password is required";
     final passwordRegex = RegExp(
-        r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$');
+      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$',
+    );
     if (!passwordRegex.hasMatch(value)) {
       return "Password must be at least 8 characters, include uppercase, lowercase, number, and special character";
     }
