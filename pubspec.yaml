@@ -76,9 +76,8 @@ flutter:
         - asset: assets/fonts/Lora-Bold.ttf
           weight: 700
 
-# -----------------------------
-# Flutter Native Splash config
-# -----------------------------
+
+# Flutter Native Splash Configuration
 flutter_native_splash:
   image: assets/images/splash_icon.png      # Replace with your splash icon
   color: "#FFFFFF"                           # Light theme background
