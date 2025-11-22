@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_news_app/config/app_theme/app_theme.dart';
-import 'package:flutter_news_app/screens/onboarding/onboarding_screen.dart';
+import 'package:flutter_news_app/utils/routes/app_pages.dart';
+
+import 'app_barrels.dart';
 
 void main() {
+
   runApp(const MyApp());
 }
 
@@ -12,15 +13,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Khabar App',
-      theme:AppTheme.lightTheme,
+      theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      themeAnimationCurve: Curves.easeIn,
-      themeAnimationDuration: Durations.short1,
-      home: OnboardingScreen(),
+      initialRoute: AppRoutes.onboard,
+      initialBinding: OnboardBinding(),
+      getPages: AppPages.routes,
     );
   }
 }
-
